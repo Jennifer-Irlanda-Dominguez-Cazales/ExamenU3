@@ -1,0 +1,68 @@
+
+package examenu3;
+
+import java.util.Scanner;
+
+public class ExamenU3 {
+public static void main(String [] args){
+		boolean continuar = true, sigue=true;
+		String [] clientes = {"VIP","Comun"};
+		int opcion,turno=0,sale=0;
+		
+		Scanner leer= new Scanner(System.in);
+		MetodosNodo envioNodo=new  MetodosNodo();
+		
+			while(continuar){
+				System.out.println(" ");
+				System.out.println("Uso de colas dinamicas");
+				System.out.println("1.-Nuevo Cliente");
+				System.out.println("2.- Pasar a Ventanilla");
+				System.out.println("3.- Mostrar Colas");				
+				System.out.println("4.- Terminar una Ventanilla");			
+				System.out.println("5.- Salir");
+				opcion=leer.nextInt();
+				
+				switch(opcion){
+				case 1://Nuevo cliente
+					if(turno==0){
+					turno= (int) (Math.random()*10+1);
+					
+					}else{
+					turno++;
+					}
+
+					int numero =(int)(Math.random()*2+0);
+
+					if(numero==0){
+					envioNodo.EmpujarVIP(clientes[0],turno);
+					}else{
+					envioNodo.EmpujarCOMUN(clientes[1],turno);
+					}
+				break;
+
+				case 2://Pasar a Ventanilla
+                                    envioNodo.MandarVentanilla();
+                                    
+				break;
+				
+				case 3://Mostrar Colar
+                                    envioNodo.MostrarCola();
+				break;
+
+				case 4://Terminar una Ventanilla
+				break;
+
+				case 5://Salir
+                                      continuar=false;
+				break;
+                                default:
+                                  System.out.println(opcion+" No es una opcion del menu");
+                                break;
+				}
+			}
+
+		}
+
+    
+    
+}
