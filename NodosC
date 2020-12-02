@@ -1,0 +1,12 @@
+
+package examenu3;
+
+public class NodosC {
+     int elemento2;
+     NodosC siguiente2; 
+     public NodosC(int elemento2){
+        this.elemento2= elemento2;
+        siguiente2 = null;
+    }   
+ 
+}
