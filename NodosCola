@@ -1,0 +1,12 @@
+
+package examenu3;
+
+public class NodosCola {
+     String elemento;
+     NodosCola siguiente; 
+    public NodosCola(String elemento){
+        this.elemento= elemento;
+        siguiente = null;
+    }   
+
+}
